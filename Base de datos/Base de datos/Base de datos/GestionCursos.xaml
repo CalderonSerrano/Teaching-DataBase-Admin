@@ -1,0 +1,122 @@
+﻿<Window x:Class="Base_de_datos.GestionCursos"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Base_de_datos"
+        mc:Ignorable="d"
+        Title="GestionCursos" Height="450" Width="440">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FFF1F93C" Offset="0"/>
+            <GradientStop Color="#FFDC632A" Offset="1"/>
+        </LinearGradientBrush>
+    </Window.Background>
+    <Grid Margin="0,-15,2,-2">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="221*"/>
+            <ColumnDefinition Width="209*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="12*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label Content="Nombre" HorizontalAlignment="Left" Margin="7,61,0,0" VerticalAlignment="Top" Height="31"/>
+        <Label Content="Código" HorizontalAlignment="Left" Margin="14,62,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <TextBox Name="tbNombre" HorizontalAlignment="Left" Height="27" Margin="67,61,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="tbCodigo" HorizontalAlignment="Left" Height="26" Margin="71,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
+        <Button Click="Anterior" Content="Anterior" HorizontalAlignment="Left" Margin="23,151,0,0" VerticalAlignment="Top" Width="80" Height="30" ForceCursor="True" BorderBrush="#FF080707" Foreground="Black">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                    <GradientStop Color="#FFEEB41B" Offset="0"/>
+                    <GradientStop Color="#FFEE4227" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button Click="Siguiente" Content="Siguiente" HorizontalAlignment="Left" Margin="111,151,0,0" VerticalAlignment="Top" Width="80" Height="30" RenderTransformOrigin="3.11,0.561" ForceCursor="True" BorderBrush="#FF080707" Foreground="Black" Grid.Column="1">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                    <GradientStop Color="#FFEEB41B" Offset="0"/>
+                    <GradientStop Color="#FFEE4227" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button Click="Último" Content="Último" HorizontalAlignment="Left" Margin="217,161,0,0" VerticalAlignment="Top" Width="80" Height="30" ForceCursor="True" BorderBrush="#FF080707" Foreground="Black" Grid.ColumnSpan="2">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                    <GradientStop Color="#FFEEB41B" Offset="0"/>
+                    <GradientStop Color="#FFEE4227" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button Click="Primero" Content="Primero" HorizontalAlignment="Left" Margin="132,161,0,0" VerticalAlignment="Top" Width="80" Height="30" ForceCursor="True" BorderBrush="#FF080707" Foreground="Black">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                    <GradientStop Color="#FFEEB41B" Offset="0"/>
+                    <GradientStop Color="#FFEE4227" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <GroupBox Header="Añadir" HorizontalAlignment="Left" Height="73" Margin="23,196,0,0" VerticalAlignment="Top" Width="389" Grid.ColumnSpan="2">
+            <StackPanel Orientation="Horizontal">
+                <Button Click="Limpiar" Content="Nuevo" Width="139" Margin="5, 5, 85, 5" ForceCursor="True" BorderBrush="#FF080707" Foreground="Black">
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                            <GradientStop Color="#FFEEB41B" Offset="0"/>
+                            <GradientStop Color="#FFEE4227" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+                <Button Click="Anyadir" Content="Añadir" Width="139" Margin="5, 5, 5, 5" ForceCursor="True" BorderBrush="#FF080707" Foreground="Black">
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                            <GradientStop Color="#FFEEB41B" Offset="0"/>
+                            <GradientStop Color="#FFEE4227" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+            </StackPanel>
+        </GroupBox>
+        <Button Click="Modificar" Content="Modificar" HorizontalAlignment="Left" Margin="23,287,0,0" VerticalAlignment="Top" Width="80" Height="30" ForceCursor="True" BorderBrush="#FF080707" Foreground="Black">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                    <GradientStop Color="#FFEEB41B" Offset="0"/>
+                    <GradientStop Color="#FFEE4227" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button Click="Eliminar" Content="Eliminar" HorizontalAlignment="Left" Margin="111,287,0,0" VerticalAlignment="Top" Width="80" Height="30" ForceCursor="True" BorderBrush="#FF080707" Foreground="Black" Grid.Column="1">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                    <GradientStop Color="#FFEEB41B" Offset="0"/>
+                    <GradientStop Color="#FFEE4227" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Label Name="Label" Content="" HorizontalAlignment="Left" Margin="40,31,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <Button Click="Recuperar" Content="Recuperar Curso" Margin="148,292,143,57" ForceCursor="True" BorderBrush="#FF080707" Foreground="Black" Grid.ColumnSpan="2">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                    <GradientStop Color="#FFEEB41B" Offset="0"/>
+                    <GradientStop Color="#FFEE4227" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button Click="VerCursos" Content="Ver cursos impartidos" Margin="23,355,34,10" ForceCursor="True" BorderBrush="#FF080707" Foreground="Black" Grid.RowSpan="2">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                    <GradientStop Color="#FFEEB41B" Offset="0"/>
+                    <GradientStop Color="#FFEE4227" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button Click="BuscarCodigo" Content="Buscar por código" Margin="28,355,18,10" ForceCursor="True" BorderBrush="#FF080707" Foreground="Black" Grid.RowSpan="2" Grid.Column="1">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                    <GradientStop Color="#FFEEB41B" Offset="0"/>
+                    <GradientStop Color="#FFEE4227" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+    </Grid>
+</Window>
